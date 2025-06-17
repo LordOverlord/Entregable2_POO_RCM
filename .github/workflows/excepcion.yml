@@ -27,8 +27,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Set up Java 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
       - name: Compile Java
-        run: javac -encoding UTF-8 Excepcion_RCM.java
+        run: javac -encoding UTF-8 -source 8 -target 8 Excepcion_RCM.java
 
       - name: Create JAR with custom version
         run: jar cfm Excepcion_RCM_v${{ github.event.inputs.version }}.jar manifest.txt *.class
