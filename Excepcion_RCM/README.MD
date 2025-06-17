@@ -3,7 +3,7 @@ Excepcion_RCM
 
 ¿De qué trata?
 --------------
-Este programa fue desarrollado como parte de una actividad para la materia de Programación Orientada a Objetos.  
+Este programa fue desarrollado como parte de una actividad para la materia de Programación Orientada a Objetos.
 Aquí se pone en práctica el manejo de **excepciones en Java** usando `try`, `catch` y `throws`, todo desde una interfaz gráfica con `JOptionPane`.
 
 El usuario debe ingresar un número del 1 al 10. El programa valida si el dato es correcto y lanza mensajes personalizados si hay errores o si se cancela la operación.
@@ -18,10 +18,10 @@ El usuario debe ingresar un número del 1 al 10. El programa valida si el dato e
 
 ¿Qué conceptos de Java aplica?
 ------------------------------
-✅ try–catch para capturar errores sin que el programa truene  
-✅ throws para propagar una excepción desde un método  
-✅ Clase personalizada de excepción (`CancelarOperacionException`)  
-✅ Swing (`JOptionPane`) para mostrar todo con interfaz gráfica  
+✅ try–catch para capturar errores sin que el programa truene
+✅ throws para propagar una excepción desde un método
+✅ Clase personalizada de excepción (`CancelarOperacionException`)
+✅ Swing (`JOptionPane`) para mostrar todo con interfaz gráfica
 
 ¿Cómo se compila y ejecuta?
 ---------------------------
@@ -65,14 +65,14 @@ Archivos incluidos
 
 Créditos
 --------
-Autor: Rafael Camacho Mendoza  
-Clase: Programación Orientada a Objetos  
-Institución: UNITEC  
+Autor: Rafael Camacho Mendoza
+Clase: Programación Orientada a Objetos
+Institución: UNITEC
 Año: 2025
 
 Licencia
 --------
 MIT License © 2025 Rafael Camacho Mendoza
 
-Este programa se puede usar, modificar y compartir libremente, con o sin fines comerciales.  
+Este programa se puede usar, modificar y compartir libremente, con o sin fines comerciales.
 Solo mantén mi nombre por respeto académico y profesional 😎
