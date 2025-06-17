@@ -11,6 +11,9 @@ on:
         required: true
         default: '0.1'
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -33,4 +36,4 @@ jobs:
         with:
           tag_name: v${{ github.event.inputs.version }}
           name: Excepcion_RCM_v${{ github.event.inputs.version }}
-          files: Excepcion_RCM_v${{ github.event.inputs.version }}.jar
+          files: Excepcion_RCM/Excepcion_RCM_v${{ github.event.inputs.version }}.jar

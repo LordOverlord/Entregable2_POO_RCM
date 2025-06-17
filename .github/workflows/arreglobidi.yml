@@ -10,6 +10,8 @@ on:
         description: 'Versión del .jar (ej. 0.1)'
         required: true
         default: '0.1'
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -33,4 +35,4 @@ jobs:
         with:
           tag_name: v${{ github.event.inputs.version }}
           name: ArregloBidi_RCM_v${{ github.event.inputs.version }}
-          files: ArregloBidi_RCM_v${{ github.event.inputs.version }}.jar
+          files: ArregloBidi_RCM/ArregloBidi_RCM_v${{ github.event.inputs.version }}.jar
