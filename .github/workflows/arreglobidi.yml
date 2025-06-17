@@ -2,6 +2,8 @@ name: Release ArregloBidi_RCM
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'ArregloBidi_RCM/**'
   workflow_dispatch:

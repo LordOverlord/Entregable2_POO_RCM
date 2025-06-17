@@ -2,6 +2,8 @@ name: Release Motocicletas_RCM
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'Motocicletas_RCM/**'
   workflow_dispatch:

@@ -2,6 +2,8 @@ name: Release Orquesta_RCM
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'Orquesta_RCM/**'
   workflow_dispatch:

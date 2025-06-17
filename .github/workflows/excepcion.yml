@@ -2,6 +2,8 @@ name: Release Excepcion_RCM
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'Excepcion_RCM/**'
   workflow_dispatch:
@@ -26,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compile Java
-        run: javac -encoding UTF-8 Excepcion_RCM.java CancelarOperacionException.java
+        run: javac -encoding UTF-8 Excepcion_RCM.java
 
       - name: Create JAR with custom version
         run: jar cfm Excepcion_RCM_v${{ github.event.inputs.version }}.jar manifest.txt *.class
