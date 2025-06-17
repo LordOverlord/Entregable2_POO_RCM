@@ -1,0 +1,36 @@
+name: Release Motocicletas_RCM
+
+on:
+  push:
+    paths:
+      - 'Motocicletas_RCM/**'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versión del .jar (ej. 0.1)'
+        required: true
+        default: '0.1'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Motocicletas_RCM
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Java
+        run: javac -encoding UTF-8 Motocicletas_RCM.java
+
+      - name: Create JAR wirh custom version
+        run: jar cfm Motocicletas_RCM_v${{ github.event.inputs.version }}.jar manifest.txt *.class
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          name: Motocicletas_RCM_v${{ github.event.inputs.version }}
+          files: Motocicletas_RCM_v${{ github.event.inputs.version }}.jar

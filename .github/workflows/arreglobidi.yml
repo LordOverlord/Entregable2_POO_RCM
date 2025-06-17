@@ -1,0 +1,36 @@
+name: Release ArregloBidi_RCM
+
+on:
+  push:
+    paths:
+      - 'ArregloBidi_RCM/**'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versión del .jar (ej. 0.1)'
+        required: true
+        default: '0.1'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ArregloBidi_RCM
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Java
+        run: javac -encoding UTF-8 ArregloBidi_RCM.java
+
+      - name: Create JAR
+        run: jar cfm ArregloBidi_RCM_v${{ github.event.inputs.version }}.jar manifest.txt *.class
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          name: ArregloBidi_RCM_v${{ github.event.inputs.version }}
+          files: ArregloBidi_RCM_v${{ github.event.inputs.version }}.jar
